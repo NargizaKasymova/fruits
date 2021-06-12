@@ -29,7 +29,7 @@ exports.getFruitById = function getFruitById(req, res) {
 
 exports.createTitle = function createTitle(req, res) {
     console.log(req.body)
-    fruits.push(req.body)
+    fruits.unshift(req.body)
     res.status(201).json(fruits)
 }
 
