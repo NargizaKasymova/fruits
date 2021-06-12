@@ -47,14 +47,13 @@ exports.updateTitle = function updateTitle(req, res) {
     //name, price
     const existingFruits = fruits.find((fruit => fruit.id !== req.params.id))
     console.log('Existing fruits', existingFruits)
-    const updatedList = {
-        ...existingFruits,
-        ...req.body
-    }
-    fruits = fruits.filter(fruit => fruit.id !== updatedList.id)
-    fruits.push(updatedList)
-    console.log(updatedList)
 
+    const index = fruits.findIndex(fruit => fruit.id === req.params.id);
+
+	fruits[index] = {
+		...fruits[index],
+		...req.body
+	};
 
     res.status(201).json(`${req.params} title is updated`)
 }
