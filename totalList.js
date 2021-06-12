@@ -40,3 +40,7 @@ exports.deleteTitle = function deleteTitle(req, res) {
     fruits = fruits.filter(fruit => fruit.id !== req.params.fruitId)
     res.status(201).json('This title was deleted')
 }
+
+exports.updateTitle = function updateTitle(req, res) {
+    
+}
