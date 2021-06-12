@@ -42,5 +42,19 @@ exports.deleteTitle = function deleteTitle(req, res) {
 }
 
 exports.updateTitle = function updateTitle(req, res) {
-    
+    console.log(req.body)
+    console.log(req.params.id)
+    //name, price
+    const existingFruits = fruits.find((fruit => fruit.id !== req.params.id))
+    console.log('Existing fruits', existingFruits)
+    const updatedList = {
+        ...existingFruits,
+        ...req.body
+    }
+    fruits = fruits.filter(fruit => fruit.id !== updatedList.id)
+    fruits.push(updatedList)
+    console.log(updatedList)
+
+
+    res.status(201).json(`${req.params} title is updated`)
 }

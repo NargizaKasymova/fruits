@@ -6,7 +6,7 @@ app.get('/get-fruit', getFruits)
 app.get('/get-fruitbyid', getFruitById)
 app.post('/create-title', createTitle)
 app.delete('/delete-title/:fruitId', deleteTitle)
-app.patch('/update-title', updateTitle)
+app.patch('/update-title/:id', updateTitle)
 
 
 const PORT = 5050
